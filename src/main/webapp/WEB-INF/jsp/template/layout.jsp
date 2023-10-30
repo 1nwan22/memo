@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<header class="bg-warning">
+		<header>
 		<!-- 상대경로 ../ => 상위 폴더 -->
 			<jsp:include page="../include/header.jsp"></jsp:include>
 		</header>
@@ -25,7 +25,7 @@
 		<!-- 유동적으로 모델에 담아서 바꿈 -->
 			<jsp:include page="../${viewName}.jsp"></jsp:include>
 		</section>
-		<footer class="bg-warning">
+		<footer>
 			<jsp:include page="../include/footer.jsp"></jsp:include>
 		</footer>
 	</div>
