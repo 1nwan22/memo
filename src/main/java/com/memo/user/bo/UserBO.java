@@ -17,6 +17,11 @@ public class UserBO {
 		return userRepository.findByLoginId(loginId);
 	}
 	
+	// input:loginId, (hashed)Password		output:UserEntity(null or entity)
+	public UserEntity getUserEntityByLoginIdPassword(String loginId, String password) {
+		return userRepository.findByLoginIdAndPassword(loginId, password);
+	}
+	
 	// input:4 params		output:id(pk) // 자동으로 insert한 객체 (Entity)를 주지만 가공해서 id(pk)로 준다.
 	public Integer addUser(String loginId, String password, String name, String email) { 
 		// null이 들어갈 수 있으므로 , BO 입장에선 해싱된 여부는 알 필요 없음
@@ -31,4 +36,5 @@ public class UserBO {
 		
 		return userEntity == null ? null : userEntity.getId();
 	}
+	
 }

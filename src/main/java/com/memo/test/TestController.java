@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memo.post.domain.Post;
 import com.memo.post.mapper.PostMapper;
 
 @Controller
@@ -40,7 +41,7 @@ public class TestController {
 	
 	@ResponseBody
 	@GetMapping("/test4")
-	public List<Map<String, Object>> test4() {
+	public List<Post> test4() {
 		return postMapper.selectPostList();
 	}
 	

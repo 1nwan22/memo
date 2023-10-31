@@ -123,7 +123,7 @@
 			// 중복확인 후 사용 가능한지 확인 => idCheckOk가 d-none이 있을 때 얼럿 띄움
 			if ($("#idCheckOk").hasClass('d-none')) {
 				alert("아이디 중복확인을 다시 해주세요");
-				return false;O
+				return false;
 			}
 			
 			// 서버로 보내는 방법 두 가지
