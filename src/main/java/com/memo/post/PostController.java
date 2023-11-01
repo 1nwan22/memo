@@ -24,17 +24,30 @@ public class PostController {
 	public String postListView(Model model, HttpSession session) {
 		// 로그인 여부 조회
 		Integer userId = (Integer) session.getAttribute("userId"); // 여러 상황을 고려하여 int 대신 Integer로 받는다
-		
+
 		if (userId == null) {
 			// 비로그인이면 로그인 화면으로 이동
 			return "redirect:/user/sign-in-view";
 		}
-		
+
 		List<Post> postList = postBO.getPostListByUserId(userId);
 
 		model.addAttribute("postList", postList);
 		model.addAttribute("viewName", "post/postList");
 		return "template/layout";
-
+	}
+	
+	
+	/**
+	 * 글쓰기 화면
+	 * @param model
+	 * @return
+	 */
+	// http://localhost/post/post-create-view
+	@GetMapping("/post-create-view")
+	public String postCreateView(Model model) {
+		model.addAttribute("viewName", "post/postCreate");
+		return "template/layout";
+				
 	}
 }
