@@ -20,6 +20,7 @@ public class PostController {
 	@Autowired
 	private PostBO postBO;
 
+	// http://localhost/post/post-list-view
 	@GetMapping("/post-list-view")
 	public String postListView(Model model, HttpSession session) {
 		// 로그인 여부 조회
