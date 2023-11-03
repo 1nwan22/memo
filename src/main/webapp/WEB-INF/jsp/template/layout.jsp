@@ -22,8 +22,10 @@
 			<jsp:include page="../include/header.jsp"></jsp:include>
 		</header>
 		<section class="contents">
+			<div class="my-5">
 		<!-- 유동적으로 모델에 담아서 바꿈 -->
-			<jsp:include page="../${viewName}.jsp"></jsp:include>
+				<jsp:include page="../${viewName}.jsp"></jsp:include>
+			</div>
 		</section>
 		<footer>
 			<jsp:include page="../include/footer.jsp"></jsp:include>

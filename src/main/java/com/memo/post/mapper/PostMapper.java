@@ -14,6 +14,10 @@ public interface PostMapper {
 	
 	public List<Post> selectPostListByUserId(int userId);
 	
+	public Post selectPostByPostIdAndUserId(
+			@Param("postId") int postId, 
+			@Param("userId") int userId);
+	
 	public void insertPost(
 			@Param("userId") int userId, 
 			@Param("subject") String subject, 

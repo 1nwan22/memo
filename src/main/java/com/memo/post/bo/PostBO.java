@@ -19,9 +19,14 @@ public class PostBO {
 	@Autowired
 	private FileManagerService fileManager;
 
-	// input:userId output:List<Post>
+	// input:userId		output:List<Post>
 	public List<Post> getPostListByUserId(int userId) {
 		return postMapper.selectPostListByUserId(userId);
+	}
+	
+	// input:postId, userId		output:Post
+	public Post getPostByPostIdAndUserId(int postId, int userId) {
+		return postMapper.selectPostByPostIdAndUserId(postId, userId);
 	}
 
 	// input:params output:X

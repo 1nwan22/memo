@@ -19,7 +19,9 @@
 				<c:forEach items="${postList}" var="post">
 				<tr>
 					<td>${post.id}</td>
-					<td>${post.subject}</td>
+					<td>
+						<a href="/post/post-detail-view?postId=${post.id}">${post.subject}</a>
+					</td>
 					<td>
 						<!-- ZonedDateTime -> Date -> String -->
 						<fmt:formatDate value="${post.createdAt}" pattern="yyyy년 M월 d일 HH:mm:ss" />
