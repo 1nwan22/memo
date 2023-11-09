@@ -10,7 +10,7 @@
 					<td>
 						<%-- 인풋박스 옆에 중복확인을 붙이기 위해 div를 하나 더 만들고 d-flex --%>
 						<div class="d-flex">
-							<input type="text" id="loginId" name="loginId" class="form-control col-9" placeholder="아이디를 입력하세요.">
+							<input type="text" id="loginId" name="loginId" class="form-control col-8" placeholder="아이디를 입력하세요.">
 							<button type="button" id="loginIdCheckBtn" class="btn btn-success">중복확인</button><br>
 						</div>
 						

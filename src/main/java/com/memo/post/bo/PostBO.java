@@ -76,4 +76,20 @@ public class PostBO {
 		postMapper.updatePostByPostIdAndUserId(postId, userId, subject, content, imagePath);
 		
 	}
+	
+	public void deletePost(int postId, int userId) {
+		
+		Post post = postMapper.selectPostByPostIdAndUserId(postId, userId);
+		
+		if (post == null) {
+			logger.error("[글 수정] post is null. postId:{}, userId:{}", postId, userId); // 와일드카드 문법
+			return;
+		}
+		
+		if (post.getImagePath() != null) {
+			fileManager.deleteFile(post.getImagePath());
+		}
+		
+		postMapper.deletePostByPostId(postId);
+	}
 }

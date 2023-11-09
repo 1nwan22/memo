@@ -17,10 +17,10 @@ public class FileManagerService {
 	private Logger logger = LoggerFactory.getLogger(FileManagerService.class); // this.getclass()
 	
 	// 실제 업로드가 된 이미지가 저장될 경로(서버) 주소마지막에 / 붙이기
-	public static final String FILE_UPLOAD_PATH = "D:\\godh22\\5_spring_project\\memo\\workspace\\images/";
+//	public static final String FILE_UPLOAD_PATH = "D:\\godh22\\5_spring_project\\memo\\workspace\\images/";
 	
 	// 집에서 할 것
-//	public static final String FILE_UPLOAD_PATH =
+	public static final String FILE_UPLOAD_PATH = "C:\\Salt\\coading\\5_spring_project\\memo\\workspace\\images/";
 	
 	// input: userLoginId, file(이미지)		output: web imagePath
 	public String saveFile(String loginId, MultipartFile file) {

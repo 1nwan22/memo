@@ -15,12 +15,12 @@
 			</div>
 		</c:if>
 		
-		<div class="d-flex justify-content-end my-4">
-			<input type="file" id="file" accept=".jpg, .jpeg, .png, .gif">
+		<div class="d-flex justify-content-end my-4 row">
+			<input type="file" id="file" accept=".jpg, .jpeg, .png, .gif" class="col-3">
 		</div>
 		
 		<div class="d-flex justify-content-between">
-			<button type="button" id="deleteBtn" class="btn btn-secondary">삭제</button>
+			<button type="button" id="deleteBtn" class="btn btn-secondary" data-post-id="${post.id}">삭제</button>
 			
 			<div>
 				<a href="/post/post-list-view" class="btn btn-dark">목록</a>
@@ -87,6 +87,7 @@
 					} else {
 						// 로직 실패
 						alert(data.errorMessage);
+						location.href = "/user/sign-in"
 					}
 				}
 				, error:function(request, status, error) {
@@ -94,6 +95,28 @@
 				}
 			});
 				
+		});
+		
+		$("#deleteBtn").on("click", function() {
+			let postId = $(this).data("post-id");
+			
+			$.ajax({
+				type:"DELETE"
+				, url:"/post/delete"
+				, data:{"postId":postId}
+			
+				, success:function(data) {
+					if (data.code == 200) {
+						alert("삭제 성공");
+						location.href = "/post/post-list-view"
+					} else if (data.code == 500) {
+						alert(data.errorMessage);
+					}
+				}
+				, error:function(request, status, error) {
+					alert("글을 삭제하는데 실패했습니다.");
+				}
+			});
 		});
 		
 		
