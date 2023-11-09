@@ -78,17 +78,19 @@ public class PostBO {
 	}
 	
 	public void deletePost(int postId, int userId) {
-		
+		// 기존글 가져옴(이미지가 있으면 삭제 해야 하기 때)
 		Post post = postMapper.selectPostByPostIdAndUserId(postId, userId);
 		
 		if (post == null) {
-			logger.error("[글 수정] post is null. postId:{}, userId:{}", postId, userId); // 와일드카드 문법
+			logger.error("[글 삭제] post is null. postId:{}, userId:{}", postId, userId); // 와일드카드 문법
 			return;
 		}
 		
+		// 기존 이미지가 존재하면 -> 삭제
 		if (post.getImagePath() != null) {
 			fileManager.deleteFile(post.getImagePath());
 		}
+		// DB 삭제
 		
 		postMapper.deletePostByPostId(postId);
 	}

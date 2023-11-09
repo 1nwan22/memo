@@ -96,7 +96,6 @@ public class PostRestController {
 		int userId = (int) session.getAttribute("userId");
 		postBO.deletePost(postId, userId);
 		
-		
 		// 응답값
 		Map<String, Object> result = new HashMap<>();
 		result.put("code", 200);

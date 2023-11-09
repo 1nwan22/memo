@@ -91,7 +91,7 @@
 					}
 				}
 				, error:function(request, status, error) {
-					alert("글을 저장하는데 실패했습니다");
+					alert("글을 수정하는데 실패했습니다");
 				}
 			});
 				
@@ -109,7 +109,7 @@
 					if (data.code == 200) {
 						alert("삭제 성공");
 						location.href = "/post/post-list-view"
-					} else if (data.code == 500) {
+					} else {
 						alert(data.errorMessage);
 					}
 				}
