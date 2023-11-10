@@ -86,7 +86,6 @@
 			
 				, success:function(data) {
 					if (data.result == "success") {
-						alert("메모가 저장되었습니다.");
 						location.href = "/post/post-list-view";
 					} else {
 						// 로직 실패
